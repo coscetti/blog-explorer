@@ -84,6 +84,9 @@
               <li><a class="section-scroll" href="#stats">Stats</a></li>
               <li><a class="section-scroll" href="#topics">Topics</a></li>
               <li><a class="section-scroll" href="#project">Project</a></li>
+              <li><a class="section-scroll" href="#modeling">Modeling</a></li>
+
+
               <!--li><a class="section-scroll" href="#contact">Contact</a></li-->
             </ul>
           </div>
@@ -142,7 +145,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Topic Model</h2>
+                <h2 class="module-title font-alt">Topics</h2>
                 <div class="module-subtitle font-serif">
                   Click on the graph to explore topics
                 </div>
@@ -163,27 +166,118 @@
           </div>
         </section>
 
-        <section class="module-small bg-dark-90">
+        <section class="module-small" id="project">
           <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Topic Top Terms</h2>
+                <h2 class="module-title font-alt">Project</h2>
                 <div class="module-subtitle font-serif">
-
                 </div>
               </div>
             </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="post">
+                    <div class="post-header font-alt">
+                      <h1 class="post-title">Analysing 10+ Years of R Blogs</h1>
+                    </div>
+                    <div class="post-entry">
+                      <p>
+                        We like beautiful data products.
+                      </p>
+                      <p>
+                        Our clients often struggle to extract meaningful
+                        information from free text documents. In machine learning
+                        and natural language processing, a topic model is a type
+                        of statistical model for discovering the abstract topics
+                        that occur in a collection of documents. Topic modeling
+                        is a frequently used text-mining tool for discovery of
+                        hidden semantic structures in a collection of documents.
+                      </p>
+                      <h4 class="font-alt">Data</h4>
+                      <p>
+                        R-Bloggers is an aggregator for blogs about R and has
+                        been around for more than a decade. It is very
+                        interesting to see how the R scene has developed over
+                        the last 10 years. What topics were talked about in the
+                        past, what are people writing about today? Would we see
+                        the rise of Shiny, the tidyverse, Rmarkdown, CRAN
+                        releases, conference announcements?
+                      </p>
+                      <p>
+                        We scraped the blog data from R-Bloggers from their
+                        public archives by.
+                      </p>
 
-            {{ topics_table }}
+                      <ol>
+                        <li>Obtain a list of links to articles published on
+                          R-Bloggers</li>
+                        <li>Download each article from the link collection</li>
+                        <li>Parse each document and combined them into a single
+                          dataframe</li>
+                      </ol>
+
+                      <p>
+                        For each document we also collected meta information such
+                        as blog title, publication date, author and URLs to the
+                        original blog.
+                      </p>
+
+                      <h4 class="font-alt">Topic Modeling</h4>
+                      <p>
+                        Explore and visualize extracted information below.
+                      </p>
+
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+                  <div class="widget">
+                    <h5 class="widget-title font-alt">Miningful</h5>
+                    <p>
+                      Miningful specializes in the development of predictive
+                      analytics. Our products make use of Artificial Intelligence,
+                      Data Science and Big Data Analysis to process unbiased data.
+                      Our innovative approach to predictive analytics connects
+                      all practical and algorithmic aspects:
+                    </p>
+
+                    <ul>
+                      <li>data collection and management</li>
+                      <li>implementation costs, resources and timing</li>
+                      <li>Machine Learning and Artificial Intelligence</li>
+                      <li>results usability and scalability</li>
+                      <li>company philosophy</li>
+                    </ul>
+                  </div>
+                  <div class="widget">
+                    <h5 class="widget-title font-alt">News</h5>
+                    <p>
+                      Check out latest news and blogs about our activities,
+                      predictive analytics, Data Science and Artificial
+                      Intelligence <a href="http://www.miningfulstudio.eu/category/blog/">here</a>.
+                    </p>
+                  </div>
+                  <div class="widget">
+                    <h5 class="widget-title font-alt">Website</h5>
+                    <p><a href="http://www.miningfulstudio.eu">miningfulstudio.eu</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- {{ topics_table }} -->
 
           </div>
         </section>
 
-        <section class="module-small">
+        <section class="module-small" id="modeling">
           <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">LDAvis</h2>
+                <h2 class="module-title font-alt">Topic Modeling</h2>
                 <div class="module-subtitle font-serif">
 
                 </div>
@@ -195,7 +289,7 @@
           </div>
         </section>
 
-        <section class="module-small" id="project">
+        <!-- <section class="module-small" id="project">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
@@ -205,127 +299,8 @@
               </div>
             </div>
           </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="post">
-                  <div class="post-header font-alt">
-                    <h1 class="post-title">Analysing 10+ Years of R Blogs</h1>
-                  </div>
-                  <div class="post-entry">
-                    <p>
-                      An article by <a href="https://juliasilge.com/">Julia Silge</a> about <a href="https://juliasilge.com/blog/evaluating-stm/">Structural Topic Models</a> gave the inspiration for this project. I have often struggled to extract meaningful information from free text documents but Julia's results looked very convincing. Additionally the chosen topic model algorithm can take advantage of additional meta information associated for each document. The <a href="https://me.eui.eu/andrea-de-angelis/blog/structural-topic-models-to-study-political-text-an-application-to-the-five-star-movements-blog/">blog article</a> by Andrea De Angelis explained how to exploit publication dates of documents and show topic trends over time. After some digging I found the <a href="https://cran.r-project.org/web/packages/stminsights/vignettes/intro.html">vignette</a> of the <a href="https://github.com/cschwem2er/stminsights">stminsights</a> package which provides functionality to extract topic correlation graphs from the trained structural topic model. All these resources put enough ideas in my head to create this app.
-                    </p>
 
-                    <h4 class="font-alt">Data</h4>
-                    <p>
-                      I am a fond reader of blog articles published on <a href="https://r-bloggers.com">R-Bloggers</a>. It is an aggregator for blogs about R and has been around for more than a decade. I thought it would be very interesting to see how the R scene has developed over the last 10 years. What topics were talked about in the past, what are people writing about today? Would we see the rise of Shiny, the tidyverse, Rmarkdown, CRAN releases, conference announcements?
-                    </p>
-                    <p>
-                      I scraped the blog data from R-Bloggers from their public archives using the super convenient <a href="https://github.com/tidyverse/rvest">rvest</a> package. The process is split into three phases to allow me later to change my mind about the particular processing of articles.
-                    </p>
-
-                    <ol>
-                      <li>Obtain a list of links to articles published on R-Bloggers</li>
-                      <li>Download each article from the link collection</li>
-                      <li>Parse each document and combined them into a single dataframe</li>
-                    </ol>
-
-                    <p>
-                      For each document I also collected meta information such as blog title, publication date, author and URLs to the original blog. In total I collected more than 30,000 articles published as early as Jan 2010.
-                    </p>
-
-                    <p>
-                      For the ongoing data refresh I download the R-Blogger RSS feeds every day using a script running in a Docker container on AWS on a daily schedule. The RSS feed is a XML file that contains the latest 25 articles published on the website. At the end of each month a second script in a second container combines the articles in all collected feeds with the 30,000 scraped articles and refreshes the topic model behind this application. So every month something new should appear in this Shiny app.
-                    </p>
-
-                    <h4 class="font-alt">Topic Model</h4>
-                    <p>
-                      I followed Julia Silge's methodology to determine the optimal number of topics. The process involves training several models with varying number of topics and then inferring a reasonable topic number from a variety of diagnostic plots. The training took many hours to complete, I let the machine run over night despite parallelising the computation.
-                    </p>
-
-                    <p>
-                      The topic models are generated using the <a href="https://github.com/bstewart/stm">stm</a> package. Papers on the topic algorithm can be found <a href="https://www.structuraltopicmodel.com/">here</a>. Some code from the <a href="https://github.com/mikajoh/tidystm">tidystm</a> package was used to transform STM outputs into tidy format.
-                    </p>
-
-                    <h4 class="font-alt">Did it work?</h4>
-                    <p>
-                      So did it actually work? Did the topic model identify relevant R trends? I think it did! Here are the results for three particular topics.  The top row of bar charts shows the overall prevalence of the shown topics. The middle row shows the estimated topic proportion across the corpus over time and the bottom row of word clouds presents the top terms in each of the topics. We see the increased interest in machine learning and deep neural networks, the rise of the tidyverse (lots of dplyr verbs) and the popularity of Shiny. Click on the image to enlarge.
-                    </p>
-
-                    <p>
-                      <a href="assets/images/topic-model-results.png">
-                        <img src="assets/images/topic-model-results.png" widh="100%" />
-                      </a>
-                    </p>
-
-                    <p>
-                      The topic correlation graph reveals an interesting cluster of correlated topics about specific machine learning aspects. There are two separate "modelling" topics, one about statistical models (linear/logistic regression, GLM, GAM, ANOVA) and the other about machine learning algorithms (decision trees, random forest, GBM, xgboost, train/test, validation). Related topics are about Bayesian inference (STAN, prior and posterior, MCMC), model scoring (measures, results, rules), cluster analysis (hierarchical clustering, PCA, dimensionality reduction), exploratory analysis (densities, distributions, outliers, medians and means), deep learning (neural networks, keras, tensorflow) and hypothesis testing (although this topic also contains several cricket terms which could indicate the content is about a different kind of test). Pretty good for an unsupervised algorithm!
-                    </p>
-
-                    <p>
-                      <a href="assets/images/topic-model-graph.png">
-                        <img src="assets/images/topic-model-graph.png" width="75%" />
-                      </a>
-                    </p>
-
-                    <p>
-                      Other big topics cover various types of visualisations (ggplot, maps), networks, time series forecasting, text mining, books and chapters, parallel processing, learning about Python, projects and tools and software, github, file formats, conference talks and presentations, APIs and Rmarkdown. There is even a topic about the US presidential election with spiking coverage in 2016 and 2012 (when the elections occurred).
-                    </p>
-
-                    <p>
-                      Overall, I am very happy with these results. In fact, I think they are quite astonishing. Without any additional information about this corpus, the topic model has identified a lot of meaningful topics and most topics are immediately recognizable as relevant R related content.
-                    </p>
-
-                    <h4 class="font-alt">Application</h4>
-                    <p>
-                      I like beautiful data products and so I used <a href="https://shiny.rstudio.com/articles/templates.html">HTML templates</a> to create a unique look for this <a href="https://shiny.rstudio.com/">Shiny application</a>. The template is called <a href="https://markup.themewagon.com/titan/index.html">Titan</a> and is freely available. There was a bit more JavaScript foo necessary for the network visualisation.
-                    </p>
-
-                    <p>
-                      To improve readability, the code is structured using <a href="https://shiny.rstudio.com/articles/modules.html">Shiny modules</a>.
-                    </p>
-
-                    <h4 class="font-alt">Deployment</h4>
-                    <p>
-                      The development environment of this project is a <a href="https://hub.docker.com/r/rocker/rstudio/">Rocker</a> based <a href="https://www.docker.com/">Docker</a> container running the Open Source version of <a href="https://rstudio.com/products/rstudio/#rstudio-server">RStudio Server</a>. Docker allows to control all aspects of the development environment, i.e. operating system, system packages and R version. The versions of R packages are tracked using the <a href="https://github.com/rstudio/renv">renv</a> package. The containerisation intends to simplify the setup of a working development environment.
-                    </p>
-
-                    <p>
-                      All code is on <a href="https://github.com/nz-stefan/blog-explorer">GitHub</a> and also available as a public <a href="https://rstudio.cloud/project/1085074">RStudio Cloud project</a>.
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Themes & Assets</h5>
-                  <p>
-                    The amazing theme used in this application is called <a href="https://markup.themewagon.com/titan/index.html">Titan</a> and is developed by <a href="https://themewagon.com/author/themewagon/">ThemeWagon</a>. It can be downloaded for free!
-                  </p>
-                  <p>
-                    The hero image on the top of this application was created by <a href="https://unsplash.com/@callumlwale">Callum Wale</a> and made available at <a href="https://unsplash.com/">Unsplash</a> for free.
-                  </p>
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Charts & Graphs</h5>
-                  <p>
-                    The beautiful <a href="https://echarts.apache.org/en">ECHARTS</a> engine is behind all charts used in this project. The engine is very comprehensive, supports many chart types and comes with a selection of stylish themes. John Coene developed an easy to use <a href="https://github.com/JohnCoene/echarts4r">R wrapper</a> complete with Shiny support, documentation and impressive examples.
-                  </p>
-                  <p>
-                    The network visualations are powered by DataStorm's <a href="https://datastorm-open.github.io/visNetwork/">visNetwork</a> package.
-                  </p>
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Code</h5>
-                  <p>Open Source and available on <a href="https://github.com/nz-stefan/blog-explorer">GitHub</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        </section> -->
 
         <section class="module-small bg-dark">
           <div class="container">
